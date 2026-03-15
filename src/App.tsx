@@ -857,11 +857,17 @@ $ git push origin main`}</CodeBlock>
         <p className="text-gray-700 mt-3"><strong>Penyebab:</strong> Ada perubahan di GitHub yang belum Anda tarik ke lokal. Biasanya karena Anda pernah mengedit file langsung di website GitHub.</p>
         <p className="text-gray-700 mt-2"><strong>Solusi:</strong></p>
         <CodeBlock>{`# Tarik dulu perubahan dari GitHub
-$ git pull origin main
+git pull origin main
 
-# Jika ada conflict, selesaikan (lihat bab Merge Conflict)
-# Setelah itu, push lagi
-$ git push origin main`}</CodeBlock>
+# Jika muncul pesan editor:
+# - "Please enter a commit message to explain why this merge is necessary..."
+# Tekan :wq untuk simpan dan keluar
+# Tekan :q! untuk batal tanpa simpan
+
+# Jika ada conflict, selesaikan dulu (lihat bagian Merge Conflict)
+# Setelah selesai, push lagi ke remote
+git push origin main
+`}</CodeBlock>
       </div>
     )
   },
