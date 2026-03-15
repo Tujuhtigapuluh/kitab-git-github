@@ -1,5 +1,9 @@
-import { useState, useEffect, useRef } from "react";
-import { sections, type ContentBlock } from "./data/gitContent";
+import { useState } from 'react';
+import { 
+  Book, Terminal, Github,
+  Menu, CheckCircle, Lightbulb, Play, Search,
+  Globe, Code
+} from 'lucide-react';
 
 function CodeBlock({ code, lang, title }: { code: string; lang?: string; title?: string }) {
   const [copied, setCopied] = useState(false);

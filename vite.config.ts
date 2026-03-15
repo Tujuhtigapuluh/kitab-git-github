@@ -10,8 +10,8 @@ const __dirname = path.dirname(__filename);
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: './', // Ini memastikan build jalan di GitHub Pages tanpa error path
   plugins: [react(), tailwindcss(), viteSingleFile()],
-  base: './', // Important for GitHub Pages
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
