@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename);
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: './', // Ini memastikan build jalan di GitHub Pages tanpa error path
+  base: '/kitab-git-github/', // Base URL sesuai dengan nama repository GitHub Anda
   plugins: [react(), tailwindcss(), viteSingleFile()],
   resolve: {
     alias: {

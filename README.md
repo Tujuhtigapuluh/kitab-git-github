@@ -1,108 +1,107 @@
 # 📖 Kitab Git & GitHub
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen?style=for-the-badge&logo=github)](https://tujuhtigapuluh.github.io/kitab-git-github/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+**Panduan Lengkap Belajar Git dan GitHub dari Nol — untuk Pemula**
 
-> **Panduan Lengkap Git & GitHub dalam Bahasa Indonesia** 🇮🇩
-
-Website interaktif yang berisi panduan lengkap cara menggunakan Git dan GitHub, dari dasar hingga mahir. Ditulis dalam Bahasa Indonesia agar mudah dipahami oleh developer Indonesia.
-
-## 🌐 Live Demo
-
-🔗 **[https://tujuhtigapuluh.github.io/kitab-git-github/](https://tujuhtigapuluh.github.io/kitab-git-github/)**
-
-## 📚 Daftar Isi
-
-| Bab | Topik | Deskripsi |
-|-----|-------|-----------|
-| 01 | 🌟 Pengenalan | Apa itu Git dan GitHub? |
-| 02 | ⚙️ Instalasi | Cara install Git di berbagai OS |
-| 03 | 🔧 Konfigurasi | Setup identitas dan preferensi |
-| 04 | 🐙 Setup GitHub | Buat akun dan autentikasi |
-| 05 | 📁 Membuat Repo | Buat repository baru |
-| 06 | 💻 Perintah Dasar | Command yang sering digunakan |
-| 07 | 🔄 Push & Pull | Sinkronisasi dengan GitHub |
-| 08 | ⭐ Edit & Push | Edit lokal dan push ke GitHub |
-| 09 | 🌿 Branching | Bekerja di cabang terpisah |
-| 10 | 🔀 Merge & Rebase | Menggabungkan branch |
-| 11 | 🚫 .gitignore | Abaikan file tertentu |
-| 12 | ⏪ Undo & Reset | Membatalkan perubahan |
-| 13 | 📦 Git Stash | Simpan sementara perubahan |
-| 14 | 📬 Pull Request | Kontribusi dan review kode |
-| 15 | 🌐 GitHub Pages | Deploy website gratis |
-| 16 | 🔁 Workflow Harian | Alur kerja sehari-hari |
-| 17 | 🔥 Troubleshooting | Solusi masalah umum |
-| 18 | 📋 Cheat Sheet | Rangkuman semua perintah |
-
-## ✨ Fitur
-
-- 📖 **18 Bab Lengkap** - Dari dasar hingga mahir
-- 🎨 **UI Modern** - Desain bersih dan responsif
-- 📋 **Copy Code** - Salin perintah dengan satu klik
-- 🔍 **Pencarian** - Cari topik atau perintah
-- 📱 **Mobile Friendly** - Bisa dibuka di HP
-- 🌈 **Syntax Highlight** - Kode mudah dibaca
-- 📊 **Progress Tracking** - Lihat progress belajar
-
-## 🛠️ Tech Stack
-
-- **React** - UI Library
-- **TypeScript** - Type Safety
-- **Vite** - Build Tool
-- **Tailwind CSS** - Styling
-
-## 🚀 Cara Menjalankan Lokal
-
-```bash
-# 1. Clone repository
-git clone https://github.com/tujuhtigapuluh/kitab-git-github.git
-
-# 2. Masuk ke folder
-cd kitab-git-github
-
-# 3. Install dependencies
-npm install
-
-# 4. Jalankan development server
-npm run dev
-
-# 5. Buka browser: http://localhost:5173
-```
-
-## 📦 Build untuk Production
-
-```bash
-# Build
-npm run build
-
-# Output ada di folder dist/
-```
-
-## 🤝 Kontribusi
-
-Kontribusi sangat diterima! Jika kamu menemukan kesalahan atau ingin menambahkan konten:
-
-1. **Fork** repository ini
-2. Buat **branch** baru: `git checkout -b feature/tambahan-baru`
-3. **Commit** perubahan: `git commit -m "Add: konten baru"`
-4. **Push** ke branch: `git push origin feature/tambahan-baru`
-5. Buat **Pull Request**
-
-## 📄 Lisensi
-
-Proyek ini dilisensikan di bawah [MIT License](LICENSE).
-
-## 👤 Author
-
-**tujuhtigapuluh**
-- GitHub: [@tujuhtigapuluh](https://github.com/tujuhtigapuluh)
+🌐 **Live Demo:** [https://tujuhtigapuluh.github.io/kitab-git-github/](https://tujuhtigapuluh.github.io/kitab-git-github/)
 
 ---
 
-<div align="center">
+## 📋 Daftar Isi (21 Bab)
 
-⭐ **Jika bermanfaat, jangan lupa kasih star!** ⭐
+| No | Bab | Kategori |
+|----|-----|----------|
+| 1 | Pengenalan Git & GitHub | Dasar |
+| 2 | Instalasi Git | Dasar |
+| 3 | Konfigurasi Awal | Dasar |
+| 4 | Membuat Repository | Dasar |
+| 5 | Memahami 3 Area Git | Dasar |
+| 6 | Perintah Dasar Git | Perintah |
+| 7 | Remote Repository & GitHub | Perintah |
+| 8 | ⭐ **Edit Lokal & Push ke GitHub** | Perintah |
+| 9 | Branching (Percabangan) | Lanjutan |
+| 10 | Merging & Merge Conflict | Lanjutan |
+| 11 | File .gitignore | Lanjutan |
+| 12 | Git Stash (Simpan Sementara) | Lanjutan |
+| 13 | Git Reset & Revert | Lanjutan |
+| 14 | Git Tag (Versi Rilis) | Lanjutan |
+| 15 | Setup SSH Key | Lanjutan |
+| 16 | Pull Request di GitHub | GitHub |
+| 17 | GitHub Pages (Deploy Web) | GitHub |
+| 18 | Git Log & History Lanjutan | GitHub |
+| 19 | Tips & Trik Git | Bonus |
+| 20 | Solusi Error Umum | Bonus |
+| 21 | Glosarium & Istilah Git | Bonus |
 
-Made with ❤️ for Indonesian Developers 🇮🇩
+---
 
-</div>
+## 🚀 Cara Deploy ke GitHub Pages
+
+### Jika Website Blank Putih, Ikuti Langkah Ini:
+
+**Cara yang paling mudah — push isi folder `dist`:**
+
+```bash
+# 1. Clone repo ini
+git clone https://github.com/tujuhtigapuluh/kitab-git-github.git
+cd kitab-git-github
+
+# 2. Install dependencies
+npm install
+
+# 3. Build proyek
+npm run build
+
+# 4. Masuk ke folder hasil build
+cd dist
+
+# 5. Inisialisasi git di folder dist
+git init
+git add .
+git commit -m "deploy"
+
+# 6. Push ke branch gh-pages
+git push -f https://github.com/tujuhtigapuluh/kitab-git-github.git main:gh-pages
+```
+
+**Lalu di GitHub:**
+1. Buka repo → **Settings** → **Pages**
+2. Source: pilih branch **gh-pages**, folder **/ (root)**
+3. Klik **Save**
+4. Tunggu 1-2 menit, website akan live!
+
+### Alternatif: Gunakan gh-pages package
+
+```bash
+npm install -D gh-pages
+npx gh-pages -d dist
+```
+
+---
+
+## 🛠️ Development
+
+```bash
+# Install dependencies
+npm install
+
+# Jalankan development server
+npm run dev
+
+# Build untuk production
+npm run build
+```
+
+---
+
+## 📄 Teknologi
+
+- **React 19** + **TypeScript**
+- **Vite 7** (build tool)
+- **Tailwind CSS 4** (styling)
+- **vite-plugin-singlefile** (bundle menjadi 1 file HTML)
+
+---
+
+## 📝 Lisensi
+
+MIT License — Bebas digunakan, dimodifikasi, dan didistribusikan.
