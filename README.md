@@ -199,7 +199,9 @@ Penyebab: Anda dan teman Anda mengedit baris kode yang sama di file yang sama.
 1. Buka file yang berkonflik di VS Code.
 2. Anda akan melihat tanda aneh seperti <<<<<<< HEAD, =======, dan >>>>>>>.
 3. Pilih salah satu kode yang ingin dipertahankan (Gunakan tombol "Accept Current Change" atau "Accept Both Changes" di VS Code).
-4. Simpan file, lalu jalankan:
+   * Tekan :wq untuk simpan dan keluar
+   * Tekan :q! untuk batal tanpa simpan
+5. Simpan file, lalu jalankan:
 ```bash
 git add .
 git commit -m "fix: resolve merge conflict"
