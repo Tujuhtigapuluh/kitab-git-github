@@ -37,26 +37,26 @@ Langkah demi Langkah (Lakukan Berurutan):
 
 ---
 
-## 2. 📚 Kamus Lengkap Perintah Git ●
+## 2. 📚 Kamus Lengkap Perintah Git 
 Berikut adalah perintah-perintah yang akan menjadi senjata utama Anda sehari-hari:
 
 Konfigurasi Awal (Wajib Saat Pertama Instal Git)
 
-1. git config --global user.name "Nama Anda" : Mengatur nama Anda.
-2. git config --global user.email "email@anda.com" : Mengatur email (samakan dengan email akun GitHub).
+  1. git config --global user.name "Nama Anda" : Mengatur nama Anda.
+  2. git config --global user.email "email@anda.com" : Mengatur email (samakan dengan email akun GitHub).
    
 Memulai Proyek
-1. git init : Menyulap folder biasa menjadi repositori Git (hanya dilakukan 1x di awal).
-2. git clone <url-repo> : Mengunduh proyek dari GitHub ke laptop.
+  1. git init : Menyulap folder biasa menjadi repositori Git (hanya dilakukan 1x di awal).
+  2. git clone <url-repo> : Mengunduh proyek dari GitHub ke laptop.
    
 Cek Status & Riwayat
-1. git status : Mengecek file mana saja yang diubah, dihapus, atau baru ditambahkan (SANGAT PENTING).
-2. git log : Melihat riwayat commit (siapa yang ngoding, kapan, dan pesan commit-nya). Tekan q untuk keluar dari log.
+  1. git status : Mengecek file mana saja yang diubah, dihapus, atau baru ditambahkan (SANGAT PENTING).
+  2. git log : Melihat riwayat commit (siapa yang ngoding, kapan, dan pesan commit-nya). Tekan q untuk keluar dari log.
    
 Branching & Merging (Bekerja Paralel)
-1. git branch : Melihat daftar cabang (branch) yang ada.
-2. git checkout -b <nama-branch> atau git switch -c <nama-branch> : Membuat cabang baru sekaligus berpindah ke cabang tersebut.
-3. git merge <nama-branch> : Menggabungkan kode dari branch lain ke branch Anda saat ini.
+  1. git branch : Melihat daftar cabang (branch) yang ada.
+  2. git checkout -b <nama-branch> atau git switch -c <nama-branch> : Membuat cabang baru sekaligus berpindah ke cabang tersebut.
+  3. git merge <nama-branch> : Menggabungkan kode dari branch lain ke branch Anda saat ini.
 
 ---
 
@@ -74,7 +74,7 @@ Mari kita selesaikan masalah ini secara permanen di langkah selanjutnya!
 Ini adalah cara paling modern dan direkomendasikan langsung oleh GitHub. Setiap kali Anda melakukan git push, GitHub akan otomatis mem-build dan mem-publish web Anda ke GitHub Pages di belakang layar.
 
 Langkah 1: Wajib Atur base di Vite
-Buka file vite.config.ts. Pastikan Anda menambahkan baris base yang berisi nama repositori GitHub Anda.
+* Buka file vite.config.ts. Pastikan Anda menambahkan baris base yang berisi nama repositori GitHub Anda.
 ```bash
 {} TypeScript
 
@@ -157,16 +157,16 @@ jobs:
 
 Langkah 3: Ubah Pengaturan di GitHub (Sangat Penting!)
 
-Buka Repositori Anda di GitHub.
-Klik tab ⚙️ Settings (Pengaturan).
-Di menu sebelah kiri, cari dan klik Pages.
-Pada bagian Build and deployment, ubah Source dari Deploy from a branch menjadi GitHub Actions.
+* Buka Repositori Anda di GitHub.
+* Klik tab ⚙️ Settings (Pengaturan).
+* Di menu sebelah kiri, cari dan klik Pages.
+* Pada bagian Build and deployment, ubah Source dari Deploy from a branch menjadi GitHub Actions.
 
 ---
 
 Langkah 4: Push Kode Anda!
 
-Buka terminal dan lakukan rutinitas:
+* Buka terminal dan lakukan rutinitas:
 ```bash
 git add .
 git commit -m "setup: menambahkan auto-deploy github actions"
@@ -193,8 +193,9 @@ Setelah berhasil di-pull, baru lakukan git push origin main lagi.
 
 2. Error: Merge Conflict 💥
    
-*Penyebab: Anda dan teman Anda mengedit baris kode yang sama di file yang sama.
-*Solusi:
+Penyebab: Anda dan teman Anda mengedit baris kode yang sama di file yang sama.
+
+* Solusi:
 1. Buka file yang berkonflik di VS Code.
 2. Anda akan melihat tanda aneh seperti <<<<<<< HEAD, =======, dan >>>>>>>.
 3. Pilih salah satu kode yang ingin dipertahankan (Gunakan tombol "Accept Current Change" atau "Accept Both Changes" di VS Code).
@@ -218,7 +219,7 @@ git commit --amend -m "pesan commit yang benar"
 
 4. Terlanjur git add . padahal ada file rahasia (seperti .env)
    
-Solusi: Batalkan dengan cara:
+* Solusi: Batalkan dengan cara:
 ```bash
 git reset
 ```
