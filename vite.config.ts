@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename);
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/Kitab-Git-GitHub-Ultimate/', // Base URL sesuai dengan nama repository GitHub Anda
+  base: './', // Menghindari masalah blank putih di GitHub Pages
   plugins: [react(), tailwindcss(), viteSingleFile()],
   resolve: {
     alias: {
