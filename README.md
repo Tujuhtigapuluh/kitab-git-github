@@ -165,10 +165,13 @@ jobs:
         uses: actions/deploy-pages@v4
 ```
 
-## 📂 Struktur Proyek
+## 📂 Struktur Proyek React/Vite
+
+Untuk proyek yang menggunakan React + Vite dengan build tool dan CI/CD:
 
 ```bash
-.
+
+📂 nama-folder-project/
 ├── 📂 .github/
 │   └── 📂 workflows/
 │       └── 📄 deploy.yml        # Workflow GitHub Actions untuk build & deploy ke GitHub Pages
@@ -193,18 +196,61 @@ jobs:
 
 ```
 
+⚙️ Pengaturan GitHub (Sangat Penting!)
+
+| Langkah | Aksi                                                                                                    |
+| ------- | ------------------------------------------------------------------------------------------------------- |
+| 1       | Buka repository Anda di GitHub                                                                          |
+| 2       | Klik tab **⚙️ Settings** (Pengaturan)                                                                   |
+| 3       | Di menu sebelah kiri, klik **Pages**                                                                    |
+| 4       | Pada bagian **Build and deployment**, ubah **Source**:<br>`Deploy from a branch` → **`GitHub Actions`** |
+
+
+## 📂 Struktur Proyek Mentah (HTML/CSS/JS)
+
+Untuk proyek statis sederhana tanpa build tool:
+
+```bash
+
+📂 nama-folder-project/
+├── 📄 index.html                # Template HTML utama
+├── 📄 script.js                 # File JavaScript
+└── 📄 style.css                 # File CSS
+
+```
+
+| Langkah | Aksi                                                                                     |
+| ------- | ---------------------------------------------------------------------------------------- |
+| 1       | Buka repository Anda di GitHub                                                           |
+| 2       | Klik tab **⚙️ Settings** (Pengaturan)                                                    |
+| 3       | Di menu sebelah kiri, klik **Pages**                                                     |
+| 4       | Pada bagian **Build and deployment**, pastikan **Source**:<br>**`Deploy from a branch`** |
+| 5       | **Branch**: pilih `main` (atau `master`)                                                 |
+| 6       | **Folder**: pilih `/(root)`                                                              |
+| 7       | Klik **Save**                                                                            |
+ 
+```bash
+
+Branch
+
+╰┈➤ 「 ⚧ main 」 ╰┈➤ 「 📂/root 」 👉 「 save 」
+
+```
+
+📋 Ringkasan Perbedaan
+
+
+| Aspek             | React/Vite                       | HTML/CSS/JS Mentah   |
+| ----------------- | -------------------------------- | -------------------- |
+| **Build Tool**    | Vite + Node.js                   | Tidak ada            |
+| **Source**        | GitHub Actions                   | Deploy from a branch |
+| **Dependencies**  | npm packages                     | Tidak ada            |
+| **Build Process** | Perlu build (`npm run build`)    | Langsung deploy      |
+| **File Config**   | `vite.config.ts`, `package.json` | Hanya HTML, CSS, JS  |
+
 ---
 
-Langkah 3: Ubah Pengaturan di GitHub (Sangat Penting!)
-
-* Buka Repositori Anda di GitHub.
-* Klik tab ⚙️ Settings (Pengaturan).
-* Di menu sebelah kiri, cari dan klik Pages.
-* Pada bagian Build and deployment, ubah Source dari Deploy from a branch menjadi GitHub Actions.
-
----
-
-Langkah 4: Push Kode Anda!
+Langkah 3: Push Kode Anda!
 
 * Buka terminal dan lakukan rutinitas:
 ```bash
