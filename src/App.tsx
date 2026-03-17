@@ -1507,269 +1507,54 @@ $ git remote set-url origin git@github.com:username/nama-repo.git`}</CodeBlock>
           Anda bisa meng-hosting website pribadi, portofolio, dokumentasi, atau proyek seperti Kitab Git ini secara gratis!
         </p>
 
-        <SectionTitle>📂 Jenis Proyek & Metode Deploy</SectionTitle>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-          <div className="border rounded-lg p-4 bg-blue-50 border-blue-200">
-            <h3 className="font-bold text-blue-800 text-lg mb-2">📝 HTML/CSS/JS Mentah</h3>
-            <p className="text-sm text-gray-700 mb-3">Website statis sederhana tanpa build tool</p>
-            <ul className="text-sm text-gray-600 space-y-1">
-              <li>✅ Tidak perlu build</li>
-              <li>✅ Deploy langsung dari branch</li>
-              <li>✅ File: index.html, style.css, script.js</li>
-            </ul>
-          </div>
-          
-          <div className="border rounded-lg p-4 bg-purple-50 border-purple-200">
-            <h3 className="font-bold text-purple-800 text-lg mb-2">⚛️ React/Vite/Modern Framework</h3>
-            <p className="text-sm text-gray-700 mb-3">Website dengan build tool dan dependencies</p>
-            <ul className="text-sm text-gray-600 space-y-1">
-              <li>⚠️ WAJIB build terlebih dahulu</li>
-              <li>⚠️ Gunakan GitHub Actions</li>
-              <li>⚠️ Perlu konfigurasi vite.config.ts</li>
-            </ul>
-          </div>
-        </div>
-
         <SectionTitle>Cara 1: Website HTML/CSS/JS Biasa (Tanpa Framework)</SectionTitle>
         <p className="text-gray-700">Jika website Anda hanya berisi file HTML, CSS, dan JavaScript biasa:</p>
-        
-        <div className="border rounded-lg p-4 bg-white">
-          <p className="font-bold text-gray-800 mb-3">📂 Struktur Proyek Mentah:</p>
-          <CodeBlock>{`📂 nama-folder-project/
-├── 📄 index.html                # Template HTML utama
-├── 📄 script.js                 # File JavaScript
-└── 📄 style.css                 # File CSS`}</CodeBlock>
-        </div>
-
         <ol className="list-decimal list-inside text-gray-700 space-y-2 ml-4">
           <li>Pastikan ada file <code>index.html</code> di root folder proyek</li>
           <li>Push semua file ke GitHub</li>
           <li>Buka repository di GitHub → <strong>Settings</strong> → <strong>Pages</strong></li>
-          <li>Pada bagian <strong>"Build and deployment"</strong>, pastikan <strong>Source</strong>: <code>Deploy from a branch</code></li>
-          <li><strong>Branch</strong>: pilih <code>main</code> (atau <code>master</code>)</li>
-          <li><strong>Folder</strong>: pilih <code>/(root)</code></li>
+          <li>Di bagian "Source", pilih branch <strong>main</strong> dan folder <strong>/ (root)</strong></li>
           <li>Klik <strong>Save</strong></li>
           <li>Tunggu beberapa menit, website Anda akan live di: <code>https://username.github.io/nama-repo/</code></li>
         </ol>
 
-        <div className="border rounded-lg p-3 bg-gray-100 mt-2">
-          <code className="text-sm">Branch ➤ 「 ⚧ main 」 ➤ 「 📂/root 」 👉 「 Save 」</code>
-        </div>
-
-        <SectionTitle>Cara 2: Website React/Vite (Framework) — Solusi PRO</SectionTitle>
-        
+        <SectionTitle>Cara 2: Website React/Vite (Framework)</SectionTitle>
         <InfoBox type="danger" title="⚠️ INILAH PENYEBAB WEB BLANK PUTIH!">
           Jika Anda membuat website dengan React, Vite, Vue, atau framework modern lainnya, 
           Anda <strong>TIDAK BISA</strong> langsung push source code mentah ke GitHub Pages. 
           Browser tidak mengerti file <code>.tsx</code>, <code>.jsx</code>, atau <code>.vue</code>.
-          Selain itu, tanpa konfigurasi <code>base</code> yang benar, GitHub Pages akan kebingungan 
-          mencari letak assets (CSS, JS, gambar) karena path direktorinya tidak sesuai.
-          <br/><br/>
-          <strong>Solusi: WAJIB build + atur base path!</strong>
+          Anda WAJIB mem-build terlebih dahulu!
         </InfoBox>
 
-        <div className="border rounded-lg p-4 bg-white">
-          <p className="font-bold text-gray-800 mb-3">📂 Struktur Proyek React/Vite:</p>
-          <CodeBlock>{`📂 nama-folder-project/
-├── 📂 .github/👈
-│   └── 📂 workflows/👈
-│       └── 📄 deploy.yml👈      # Workflow GitHub Actions untuk build & deploy
-├── 📂 public/                   # File statis (favicon, manifest, dll.)
-├── 📂 src/                      # Source code utama aplikasi
-│   ├── 📂 assets/               # Gambar, ikon, font, dll.
-│   ├── 📂 components/           # Komponen React reusable
-│   ├── 📂 pages/                # Halaman utama aplikasi
-│   ├── 📄 App.tsx               # Root komponen React
-│   ├── 📄 index.css             # File CSS utama/global styling
-│   └── 📄 main.tsx              # Entry point aplikasi
-├── 📄 .gitignore                # File/folder yang diabaikan Git
-├── 📄 index.html                # Template HTML utama
-├── 📄 package.json              # Konfigurasi npm, dependencies, scripts
-├── 📄 tsconfig.json             # Konfigurasi TypeScript
-├── 📄 vite.config.ts👈          # Konfigurasi Vite (build, plugin, alias)
-└── 📄 README.md                 # Dokumentasi proyek`}</CodeBlock>
-        </div>
-
-        <p className="text-gray-700 font-bold mt-4 text-lg">🚀 Langkah-langkah Deploy React/Vite ke GitHub Pages:</p>
+        <p className="text-gray-700 font-bold mt-4">Langkah-langkah Deploy React/Vite ke GitHub Pages:</p>
 
         <div className="space-y-4 mt-4">
-          <div className="border rounded-lg p-4 bg-white border-l-4 border-blue-500">
-            <p className="font-bold text-gray-800 text-lg">Langkah 1: Atur base di vite.config.ts</p>
-            <p className="text-gray-600 text-sm mb-3">Ini <strong>WAJIB</strong> untuk menghindari blank screen di GitHub Pages!</p>
-            <CodeBlock title="vite.config.ts">{`import path from "path";
-import { fileURLToPath } from "url";
-import tailwindcss from "@tailwindcss/vite";
-import react from "@vitejs/plugin-react";
-import { defineConfig } from "vite";
-import { viteSingleFile } from "vite-plugin-singlefile";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-// https://vite.dev/config/
-export default defineConfig({
-  base: './', // ← WAJIB! Menghindari masalah blank putih di GitHub Pages👈
-  plugins: [react(), tailwindcss(), viteSingleFile()],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "src"),
-    },
-  },
-});`}</CodeBlock>
-          </div>
-
-          <div className="border rounded-lg p-4 bg-white border-l-4 border-green-500">
-            <p className="font-bold text-gray-800 text-lg">Langkah 2: Buat File deploy.yml (Jantung Otomatisasi)</p>
-            <p className="text-gray-600 text-sm mb-3">
-              Buat folder <code>.github/workflows/</code> di root proyek, lalu buat file <code>deploy.yml</code>
-            </p>
-            <p className="text-sm text-gray-500 mb-2">Struktur: <code>📂nama-folder-project/📂.github/📂workflows/📄deploy.yml</code></p>
-            
-            <CodeBlock title=".github/workflows/deploy.yml">{`name: Deploy to GitHub Pages
-
-on:
-  push:
-    branches:
-      - main
-      - master
-
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
-
-jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: \${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Set up Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build project
-        # BAGIAN PENTING: Menambahkan --base=/nama-repo/ agar build Vite tidak menyebabkan blank screen
-        run: npx tsc -b && npx vite build --base=/\${{ github.event.repository.name }}/
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-        with:
-          enablement: true
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: './dist'
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4`}</CodeBlock>
-          </div>
-
-          <div className="border rounded-lg p-4 bg-white border-l-4 border-purple-500">
-            <p className="font-bold text-gray-800 text-lg">Langkah 3: Konfigurasi GitHub Repository</p>
-            <ol className="list-decimal list-inside text-gray-700 space-y-2 ml-4">
-              <li>Buka repository Anda di GitHub</li>
-              <li>Klik tab <strong>⚙️ Settings</strong> (Pengaturan)</li>
-              <li>Di menu sebelah kiri, klik <strong>Pages</strong></li>
-              <li>Pada bagian <strong>"Build and deployment"</strong>, ubah <strong>Source</strong>:<br/>
-                <code>Deploy from a branch</code> → <strong><code>GitHub Actions</code></strong></li>
-              <li>Save pengaturan</li>
-            </ol>
-          </div>
-
-          <div className="border rounded-lg p-4 bg-white border-l-4 border-orange-500">
-            <p className="font-bold text-gray-800 text-lg">Langkah 4: Push Kode & Auto-Deploy!</p>
-            <CodeBlock>{`git add .
-git commit -m "setup: menambahkan auto-deploy github actions"
-git push origin main`}</CodeBlock>
-            <p className="text-gray-600 text-sm mt-2">
-              Setelah push, cek tab <strong>"Actions"</strong> di repository GitHub Anda. 
-              Jika workflow berhasil (centang hijau), website Anda sudah online!
-            </p>
-          </div>
-        </div>
-
-        <InfoBox type="success" title="🎉 Website Anda Live!">
-          Setelah beberapa menit, website Anda akan muncul di:<br/>
-          <code className="text-lg bg-gray-100 px-2 py-1 rounded">https://username.github.io/nama-repo/</code><br/><br/>
-          Jika masih blank putih, coba:
-          <ul className="list-disc list-inside mt-2 ml-4">
-            <li>Hard-refresh browser (<code>Ctrl+Shift+R</code> atau <code>Cmd+Shift+R</code>)</li>
-            <li>Tunggu beberapa menit (GitHub butuh waktu memproses)</li>
-            <li>Cek tab Actions untuk melihat log error</li>
-          </ul>
-        </InfoBox>
-
-        <SectionTitle>📋 Ringkasan Perbedaan Metode Deploy</SectionTitle>
-        
-        <div className="overflow-x-auto">
-          <table className="min-w-full border-collapse border border-gray-300 text-sm">
-            <thead>
-              <tr className="bg-gray-100">
-                <th className="border border-gray-300 px-4 py-2 text-left font-bold">Aspek</th>
-                <th className="border border-gray-300 px-4 py-2 text-left font-bold text-blue-700">HTML/CSS/JS Mentah</th>
-                <th className="border border-gray-300 px-4 py-2 text-left font-bold text-purple-700">React/Vite/Modern</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td className="border border-gray-300 px-4 py-2 font-semibold">Build Tool</td>
-                <td className="border border-gray-300 px-4 py-2">Tidak ada</td>
-                <td className="border border-gray-300 px-4 py-2">Vite + Node.js</td>
-              </tr>
-              <tr className="bg-gray-50">
-                <td className="border border-gray-300 px-4 py-2 font-semibold">Source Deploy</td>
-                <td className="border border-gray-300 px-4 py-2"><code>Deploy from a branch</code></td>
-                <td className="border border-gray-300 px-4 py-2"><code>GitHub Actions</code></td>
-              </tr>
-              <tr>
-                <td className="border border-gray-300 px-4 py-2 font-semibold">Dependencies</td>
-                <td className="border border-gray-300 px-4 py-2">Tidak ada</td>
-                <td className="border border-gray-300 px-4 py-2">npm packages</td>
-              </tr>
-              <tr className="bg-gray-50">
-                <td className="border border-gray-300 px-4 py-2 font-semibold">Build Process</td>
-                <td className="border border-gray-300 px-4 py-2">Langsung deploy</td>
-                <td className="border border-gray-300 px-4 py-2"><code>npm run build</code> (otomatis via CI)</td>
-              </tr>
-              <tr>
-                <td className="border border-gray-300 px-4 py-2 font-semibold">File Config</td>
-                <td className="border border-gray-300 px-4 py-2">Hanya HTML, CSS, JS</td>
-                <td className="border border-gray-300 px-4 py-2"><code>vite.config.ts</code>, <code>package.json</code>, <code>deploy.yml</code></td>
-              </tr>
-              <tr className="bg-gray-50">
-                <td className="border border-gray-300 px-4 py-2 font-semibold">Base Path</td>
-                <td className="border border-gray-300 px-4 py-2">Tidak perlu</td>
-                <td className="border border-gray-300 px-4 py-2"><strong>WAJIB</strong> <code>base: './'</code></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <SectionTitle>🔧 Metode Alternatif (Manual)</SectionTitle>
-        <p className="text-gray-700">Jika tidak ingin menggunakan GitHub Actions, ada cara manual lain:</p>
-
-        <div className="space-y-3 mt-3">
           <div className="border rounded-lg p-4 bg-white">
-            <p className="font-bold text-gray-800">Cara A: Gunakan gh-pages (otomatis)</p>
+            <p className="font-bold text-gray-800">Langkah 1: Atur base di vite.config.ts</p>
+            <CodeBlock title="vite.config.ts">{`import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+export default defineConfig({
+  base: './',   // ← WAJIB untuk GitHub Pages!
+  plugins: [react()],
+})`}</CodeBlock>
+          </div>
+
+          <div className="border rounded-lg p-4 bg-white">
+            <p className="font-bold text-gray-800">Langkah 2: Build proyek</p>
+            <CodeBlock>{`$ npm run build`}</CodeBlock>
+            <p className="text-gray-600 text-sm mt-2">Perintah ini akan menghasilkan folder <code>dist/</code> yang berisi file HTML, CSS, dan JS yang sudah siap di-hosting.</p>
+          </div>
+
+          <div className="border rounded-lg p-4 bg-white">
+            <p className="font-bold text-gray-800">Langkah 3: Upload folder dist ke GitHub Pages</p>
+            <p className="text-gray-700 text-sm mb-3">Ada beberapa cara:</p>
+            
+            <p className="font-semibold text-gray-700 text-sm mt-3">Cara A: Push isi folder dist ke branch main</p>
+            <CodeBlock>{`# Copy isi folder dist ke repository GitHub Pages Anda
+# Pastikan file index.html ada di ROOT repository`}</CodeBlock>
+
+            <p className="font-semibold text-gray-700 text-sm mt-3">Cara B: Gunakan gh-pages (otomatis)</p>
             <CodeBlock>{`# Install package gh-pages
 $ npm install -D gh-pages
 
@@ -1779,10 +1564,8 @@ $ npm install -D gh-pages
 # Build lalu deploy
 $ npm run build
 $ npx gh-pages -d dist`}</CodeBlock>
-          </div>
 
-          <div className="border rounded-lg p-4 bg-white">
-            <p className="font-bold text-gray-800">Cara B: Manual — push folder dist ke branch gh-pages</p>
+            <p className="font-semibold text-gray-700 text-sm mt-3">Cara C: Manual — push folder dist saja</p>
             <CodeBlock>{`# 1. Build proyek
 $ npm run build
 
@@ -1799,15 +1582,23 @@ $ git push -f https://github.com/username/nama-repo.git main:gh-pages
 
 # 5. Di GitHub → Settings → Pages → pilih branch gh-pages`}</CodeBlock>
           </div>
+
+          <div className="border rounded-lg p-4 bg-white">
+            <p className="font-bold text-gray-800">Langkah 4: Atur GitHub Pages Source</p>
+            <ol className="list-decimal list-inside text-gray-700 space-y-1 ml-4 text-sm">
+              <li>Buka repository di GitHub</li>
+              <li>Klik <strong>Settings</strong> → <strong>Pages</strong></li>
+              <li>Di "Source", pilih branch <strong>gh-pages</strong> (atau <strong>main</strong> tergantung cara deploy Anda)</li>
+              <li>Folder: <strong>/ (root)</strong></li>
+              <li>Klik <strong>Save</strong></li>
+            </ol>
+          </div>
         </div>
 
-        <InfoBox type="tip" title="💡 Tips Penting">
-          <ul className="list-disc list-inside space-y-1">
-            <li>Selalu gunakan <code>base: './'</code> di <code>vite.config.ts</code> untuk project GitHub Pages</li>
-            <li>Di GitHub Actions, gunakan <code>--base=/${'{'}{'{'} github.event.repository.name {'}'}{'}'}/</code> saat build</li>
-            <li>Pastikan folder <code>dist</code> tidak di-ignore di <code>.gitignore</code> jika deploy manual</li>
-            <li>Gunakan <code>vite-plugin-singlefile</code> jika ingin output single HTML file</li>
-          </ul>
+        <InfoBox type="success" title="Website Anda Live!">
+          Setelah beberapa menit, website Anda akan muncul di:<br/>
+          <code className="text-lg">https://username.github.io/nama-repo/</code><br/><br/>
+          Jika masih blank putih, coba hard-refresh browser (Ctrl+Shift+R) atau tunggu beberapa menit lagi karena GitHub butuh waktu untuk memproses.
         </InfoBox>
       </div>
     )
